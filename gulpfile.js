@@ -18,8 +18,8 @@ gulp.task("resources", ["server", "app", "assets"], function () {
 });
 /* copy the app core files to the build folder */
 gulp.task("app", ['index'], function () {
-    return gulp.src(["src/**", "!src/**/*.ts"])
-        .pipe(gulp.dest("build/app"));
+    return gulp.src(["src/**/*", "!src/**/*.ts", "!src/server", "!src/server/**"])
+        .pipe(gulp.dest("build"));
 });
 /* get the index file to the root of the build */
 gulp.task("index", function () {
